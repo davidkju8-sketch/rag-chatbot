@@ -17,7 +17,9 @@ from langchain_core.chat_history import InMemoryChatMessageHistory
 # 1. 환경 변수 로드
 # =========================
 load_dotenv("./data/.env ")
-api_key = os.getenv("OPENAI_API_KEY")
+import streamlit as st
+
+api_key = st.secrets.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
 
 if not api_key:
     raise ValueError("OPENAI_API_KEY가 설정되지 않았습니다. .env 파일을 확인하세요.")
