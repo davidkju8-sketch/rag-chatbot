@@ -51,7 +51,7 @@ def trim_chat_history(session_id: str, max_messages: int = 4):
 @st.cache_resource
 def process_pdf():
     # PDF 파일 경로를 네 환경에 맞게 수정
-    pdf_path = "C:/RAG/data/2024_KB_부동산_보고서_최종.pdf"
+    pdf_path = "./2024_KB_부동산_보고서_최종.pdf"
 
     if not os.path.exists(pdf_path):
         raise FileNotFoundError(f"PDF 파일을 찾을 수 없습니다: {pdf_path}")
